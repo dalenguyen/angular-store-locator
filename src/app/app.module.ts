@@ -14,7 +14,7 @@ import { LocationsService } from './locations.service';
   imports: [
     BrowserModule,
     AgmCoreModule.forRoot({
-
+      // apiKey: 'AIzaSyAvcDy5ZYc2ujCS6TTtI3RYX5QmuoV8Ffw'
     })
   ],
   providers: [LocationsService],
