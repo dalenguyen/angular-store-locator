@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AgmCoreModule } from '@agm/core';
 
 import { AppComponent } from './app.component';
+import { LocationsService } from './locations.service';
 
 
 @NgModule({
@@ -16,7 +17,7 @@ import { AppComponent } from './app.component';
 
     })
   ],
-  providers: [],
+  providers: [LocationsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
