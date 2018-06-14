@@ -1,0 +1,61 @@
+.storelocator-panel {    
+    overflow: auto;
+    max-width: 300px;
+    .storelocator-filter {
+        background: #fff;
+        .location-search {
+            padding: .4em;
+            input {
+                border-radius: 0 0 0 0;
+                font-size: 14px;
+                height: 30px;
+                margin: 8px 0;
+                padding: 0 8px;
+                width: 91%;
+                border-top: none;
+                border-right: none;
+                border-left: none;
+                background: url(http://spa810.dev.rshft.com/wp-content/themes/spa810-national/assets/images/search.png) no-repeat scroll 0 0 transparent;
+                background-position: 100%;
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+    }
+    ul.store-list{
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        li{
+            margin: 0;
+            position: relative;
+            .store{
+                cursor: pointer;
+                padding: 0 5px 10px;
+                border: 0;
+                color: #60513a;
+                div{
+                    color: #333;
+                    font-size: 12px;
+                    line-height: 15px;
+                }
+                .title{
+                    border-bottom: 0 none;
+                    color: #605137;                    
+                    font-size: 18px;
+                    font-weight: 400;
+                    height: 35px;
+                    margin: 0 -5px 5px;
+                    padding: 0 5px;
+                    line-height: 31px;
+                }
+                .store .phone, .store .web{
+                    margin-top: .2em;
+                    margin-bottom: .5em;
+                    display: block;
+                }
+            }
+        }
+    }
+}

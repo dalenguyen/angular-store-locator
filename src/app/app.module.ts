@@ -18,7 +18,7 @@ import { PanelComponent } from './panel/panel.component';
   imports: [
     BrowserModule,
     AgmCoreModule.forRoot({
-      // apiKey: 'AIzaSyAvcDy5ZYc2ujCS6TTtI3RYX5QmuoV8Ffw'
+      apiKey: 'AIzaSyB3a71eakX1ji_aFPmQpGf5gWD278RRl4o'
     })
   ],
   providers: [LocationsService],
