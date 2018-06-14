@@ -2,7 +2,15 @@
 
   <form class="storelocator-filter">
     <div class="location-search">
-      <input placeholder="Find a store" autocomplete="off">
+      <input 
+        type="text"
+        placeholder="Find a store" 
+        autocorrect="off"
+        autocapitalize="off"
+        spellcheck="off"
+        autocomplete="off"
+        #search
+        [formControl]="searchControl">
     </div>
   </form>
 

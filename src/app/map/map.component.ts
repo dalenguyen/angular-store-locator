@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Marker } from '../../models';
-import { MouseEvent } from '@agm/core';
+import { MapsAPILoader, MouseEvent } from '@agm/core';
 import { LocationsService } from '../locations.service';
+import { MapsService } from '../maps.service';
 
 
 @Component({
@@ -9,18 +10,40 @@ import { LocationsService } from '../locations.service';
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.scss']
 })
-export class MapComponent {
+export class MapComponent implements OnInit {
 
-  // google maps zoom level
-  zoom: number = 8;
+  public lat: number;
+  public lng: number;
+  public zoom: number;
 
-  // initial center position for the map
-  lat: number = 51.678418;
-  lng: number = 7.809007;
+  public markers: Marker[] = this.locationService.getMarkers();
 
-  markers: Marker[] = this.locationService.getMarkers();
+  constructor(
+    private locationService: LocationsService,
+    private mapApiLoader: MapsAPILoader,
+    private mapsService: MapsService
+  ) { }
 
-  constructor(private locationService: LocationsService) { }
+  ngOnInit() {
+
+    this.lat = this.mapsService.lat;
+    this.lng = this.mapsService.lng;
+    this.zoom = this.mapsService.zoom;
+
+    this.setCurrentPosition();
+    this.mapApiLoader.load();
+
+    this.mapsService.newCoordinators.subscribe(
+      (coords: {lat: number, lng: number, zoom: number}) => {
+        if (coords) {
+          this.lat = coords.lat;
+          this.lng = coords.lng;
+          this.zoom = coords.zoom;
+          this.mapApiLoader.load();
+        }
+      }
+    );
+  }
 
   mapClicked($event: MouseEvent) {
     console.log($event);
@@ -30,4 +53,13 @@ export class MapComponent {
     console.log(`Clicked the marker: ${label || index}`);
   }
 
+  private setCurrentPosition() {
+    if ('geolocation' in navigator) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        this.lat = position.coords.latitude;
+        this.lng = position.coords.longitude;
+        this.zoom = 10;
+      });
+    }
+  }
 }
