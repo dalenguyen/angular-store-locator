@@ -15,20 +15,20 @@
   </form>
 
   <ul class="store-list">
-    <li class="store" id="store-4">
-      <div class="store">
-        <div class="title">Uptown</div>
-        <div class="web">
-          <a href="https://spa810.dev.rshft.com/Uptown" target="_blank">Visit Website</a>
-        </div>
-        <div class="address">2222 McKinney Ave Suite 120
-          <br>Dallas, TX, 75201</div>
-        <div class="phone">469-730-3333</div>
-        <ul class="features"></ul>
-      </div>
-      <div class="detail">
-        <div class="detail-icon"></div>
-      </div>
+    <li *ngFor="let location of locations">
+        <div class="store">
+            <div class="title">{{ location.title }}</div>
+            <div class="web">
+              <a href="{{location.website}}" target="_blank">Visit Website</a>
+            </div>
+            <div class="address">{{location.address}}
+              <br>{{location.city}}, {{location.state}}, {{location.postalcode}}</div>
+            <div class="phone">{{location.phone}}</div>            
+            <div class="email">{{location.email}}</div>            
+          </div>
+          <div class="detail">
+            <div class="detail-icon"></div>
+          </div>
     </li>
   </ul>
 

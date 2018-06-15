@@ -8,26 +8,32 @@ export class LocationsService {
     {
       lat: 51.673858,
       lng: 7.815982,
-      label: 'A',
+      title: 'A',
       icon: 'https://www.ftsgps.com/wp-content/uploads/2017/05/icon-location-100.png',
       draggable: true,
-      info: 'InfoWindow content'
+      street: '2222 McKinney Ave Suite 120',
+      city: 'Dallas',
+      state: 'TX',
+      postalcode: '75201',
+      email: 'test@example.com',
+      phone: '111-111-1111',
+      website: 'http://example.com',
+      detail: 'InfoWindow content'
     },
     {
-      lat: 51.373858,
-      lng: 7.215982,
-      label: 'B',
-      icon: 'https://www.ftsgps.com/wp-content/uploads/2017/05/icon-location-100.png',
-      draggable: false,
-      info: 'InfoWindow content'
-    },
-    {
-      lat: 51.723858,
-      lng: 7.895982,
-      label: 'C',
+      lat: 51.773858,
+      lng: 8.815982,
+      title: 'B',
       icon: 'https://www.ftsgps.com/wp-content/uploads/2017/05/icon-location-100.png',
       draggable: true,
-      info: 'InfoWindow content'
+      street: '2222 McKinney Ave Suite 120',
+      city: 'Dallas',
+      state: 'TX',
+      postalcode: '75201',
+      email: 'test@example.com',
+      phone: '111-111-1111',
+      website: 'http://example.com',
+      detail: 'InfoWindow content'
     }
   ];
 

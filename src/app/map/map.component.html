@@ -8,17 +8,22 @@
 
   <agm-marker 
     *ngFor="let m of markers; let i = index"
-    (markerClick)="clickedMarker(m.label, i)"
+    (markerClick)="clickedMarker(m.title, i)"
     [latitude]="m.lat"
     [longitude]="m.lng"
-    [label]="m.label"
+    [label]="m.title"
     [iconUrl]="m.icon"
     [markerDraggable]="m.draggable">
 
     <agm-info-window>
-      <h1>Hello there</h1>
-      <strong>{{ m.info }}</strong>     
-      <p>This is {{ m.label }}</p>       
+      <div class="title">{{ m.title }}</div>
+      <div class="web">
+        <a href="{{m.website}}" target="_blank">Visit Website</a>
+      </div>
+      <div class="address">{{m.address}}
+        <br>{{m.city}}, {{m.state}}, {{m.postalcode}}</div>
+      <div class="phone">{{m.phone}}</div>            
+      <div class="email">{{m.email}}</div>        
     </agm-info-window>
 
   </agm-marker>
