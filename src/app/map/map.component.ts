@@ -61,6 +61,7 @@ export class MapComponent implements OnInit {
 
   clickedMarker(label: string, index: number) {
     console.log(`Clicked the marker: ${label || index}`);
+    this.openedWindow = index;
   }
 
   private setCurrentPosition() {
