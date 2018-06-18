@@ -4,6 +4,7 @@ import { Marker } from '../models';
 @Injectable()
 export class LocationsService {
 
+  // @Todo: replace markers by an API
   markers: Marker[] = [
     {
       lat: 51.673858,

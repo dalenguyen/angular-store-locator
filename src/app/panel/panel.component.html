@@ -15,7 +15,7 @@
   </form>
 
   <ul class="store-list">
-    <li *ngFor="let location of locations, let i = index">
+    <li *ngFor="let location of locationList, let i = index">
         <div class="store" (click)="openWindow(location, i)">
             <div class="title">{{ location.title }}</div>
             <div class="web">

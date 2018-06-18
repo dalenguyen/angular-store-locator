@@ -67,11 +67,13 @@ export class MapComponent implements OnInit {
   private setCurrentPosition() {
     if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition((position) => {
-        this.lat = position.coords.latitude;
-        this.lng = position.coords.longitude;
+        this.lat = this.mapsService.lat = position.coords.latitude;
+        this.lng = this.mapsService.lng = position.coords.longitude;
         this.zoom = 10;
       });
     }
+
+    // @Todo: resort the locations
   }
 
   isInfoWindowOpen(index: number) {
