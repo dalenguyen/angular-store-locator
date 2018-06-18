@@ -3,4 +3,7 @@ app-panel{
     width: 300px;
     float: left;
     border: 1px solid #ccc;
+    @media(max-width: 480px){
+        width: 100%;
+    }
 }

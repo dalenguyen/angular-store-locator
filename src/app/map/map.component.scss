@@ -1,3 +1,6 @@
 agm-map {
     height: 500px;
+    @media(max-width: 480px){
+        display: none;
+    }
 }
