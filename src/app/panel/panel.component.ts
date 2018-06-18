@@ -58,4 +58,13 @@ export class PanelComponent implements OnInit {
     });
   }
 
+  openWindow(location: Marker, index: number) {
+    this.mapsService.openWindow.next(index);
+    this.mapsService.newCoordinators.next({
+      lat: location.lat,
+      lng: location.lng,
+      zoom: 10
+    });
+  }
+
 }

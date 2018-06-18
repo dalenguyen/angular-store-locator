@@ -10,6 +10,8 @@ export class MapsService {
 
   public newCoordinators = new Subject();
 
+  public openWindow = new Subject();
+
   constructor() { }
 
 }

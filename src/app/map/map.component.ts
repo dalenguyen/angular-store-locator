@@ -16,6 +16,8 @@ export class MapComponent implements OnInit {
   public lng: number;
   public zoom: number;
 
+  public openedWindow: number;
+
   public markers: Marker[] = this.locationService.getMarkers();
 
   constructor(
@@ -33,14 +35,22 @@ export class MapComponent implements OnInit {
     this.setCurrentPosition();
     this.mapApiLoader.load();
 
+    // Zoom to new location after search
     this.mapsService.newCoordinators.subscribe(
-      (coords: {lat: number, lng: number, zoom: number}) => {
+      (coords: { lat: number, lng: number, zoom: number }) => {
         if (coords) {
           this.lat = coords.lat;
           this.lng = coords.lng;
           this.zoom = coords.zoom;
           this.mapApiLoader.load();
         }
+      }
+    );
+
+    // Open window after click on panel
+    this.mapsService.openWindow.subscribe(
+      index => {
+        this.openedWindow = +index;
       }
     );
   }
@@ -61,5 +71,9 @@ export class MapComponent implements OnInit {
         this.zoom = 10;
       });
     }
+  }
+
+  isInfoWindowOpen(index: number) {
+    return this.openedWindow === index;
   }
 }

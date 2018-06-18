@@ -15,8 +15,8 @@
   </form>
 
   <ul class="store-list">
-    <li *ngFor="let location of locations">
-        <div class="store">
+    <li *ngFor="let location of locations, let i = index">
+        <div class="store" (click)="openWindow(location, i)">
             <div class="title">{{ location.title }}</div>
             <div class="web">
               <a href="{{location.website}}" target="_blank">Visit Website</a>

@@ -15,7 +15,8 @@
     [iconUrl]="m.icon"
     [markerDraggable]="m.draggable">
 
-    <agm-info-window>
+    <agm-info-window
+      [isOpen]="isInfoWindowOpen(i)">
       <div class="title">{{ m.title }}</div>
       <div class="web">
         <a href="{{m.website}}" target="_blank">Visit Website</a>
