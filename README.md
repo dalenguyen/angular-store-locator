@@ -2,7 +2,9 @@
 
 This is an Angular 2+ Google Maps store locator project. 
 
-# Clone this project
+Demo at: http://angular-store-locator.surge.sh
+
+#@ Clone this project
 
 ```
 git clone git@github.com:dalenguyen/angular-store-locator.git .
